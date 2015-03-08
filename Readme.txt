@@ -19,7 +19,22 @@ public class Word implements Comparable<Word>
 		(call method to get canotical form of word)
 	}
 
-	
+	/** this accessor method retrieves
+	  * myWord
+	**/
+	public String getMyWord()
+	{
+		return myWord;
+	}
+
+	/** 
+	* retrieves canatical form
+	**/
+	public String getMyCat()
+	{
+		return myCat();
+	}
+
 	/**
 	* this method will find the canotical 
 	* form of the passed . efficency will be
@@ -27,7 +42,7 @@ public class Word implements Comparable<Word>
 	* is fairly large.
 	**/
 	
-	private final void getCat(theWord)
+	private final void makeCat(theWord)
 	{
 		(convert string into a character array)
 
@@ -50,22 +65,20 @@ public class Word implements Comparable<Word>
 	**/
 	public int compareTo (Word theOther)
 	{
-		int result = 0;
-		if (myCat less than theOther)
-		{	
-			result = -1;
-		}
-		else if (myCat greater than theOther)
-		{
-			result = 1;
-		}
-		return result;
+		return myCat.compareTo(theOther.getMyCat());
 	}
 }
 
 /********** WORD OBJECT COMPARATOR CopareByOriginal*************/
 
-Public Class
+public class IgnoreCaseCompare implements Comparator<Word>
+{.
+   public int compare(Word theFirst, Word theSecond)
+   {	
+	return theFirst.getMyWord()
+	.compareTo(theSecond.getMyWord());
+   }
+}
 
 
 /************************ ANAGRAM FAMILY *******************************/
