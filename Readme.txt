@@ -1,3 +1,152 @@
+Sudo code
+-----------------------------------------------------------------------------------------------------------------
+
+
+/************************ WORD OBJECT CLASS *******************************/
+public class Word implements Comparable<Word>
+{
+	
+	private String myWord;
+	private String myCat;
+	
+	/**
+	* this constructor assigns myWord
+	* and calls       to create myCan
+	**/
+	public Word(String theWord)
+	{
+		(assign theWord to myWord)
+		(call method to get canotical form of word)
+	}
+
+	
+	/**
+	* this method will find the canotical 
+	* form of the passed . efficency will be
+	* crucial as the database being processed 
+	* is fairly large.
+	**/
+	
+	private final void getCat(theWord)
+	{
+		(convert string into a character array)
+
+		(use merge sort recursive algorithm to sort letters)
+		
+		(combine array into string and assign to myCat)
+	}
+		
+	private final merge(Char[] theLeft, Char[] theRight)
+	{
+		(this method controles the merging section
+		of the merge sort algorithm)
+	}	
+	
+	/**
+	* this method returns positive int
+	* value if myCat > theOther, 0 if 
+	* myCat is == theOther, and negative
+	* int if myCat < theOther.
+	**/
+	public int compareTo (Word theOther)
+	{
+		int result = 0;
+		if (myCat less than theOther)
+		{	
+			result = -1;
+		}
+		else if (myCat greater than theOther)
+		{
+			result = 1;
+		}
+		return result;
+	}
+}
+
+/********** WORD OBJECT COMPARATOR CopareByOriginal*************/
+
+Public Class
+
+
+/************************ ANAGRAM FAMILY *******************************/
+
+public class AnagramFamily
+{
+	private LinkedList<Word> myWords;
+	private int myCount;
+	
+	/**
+	 * this constructor accepts a list 
+	 * containing a sorted anagram 
+	 * family
+	**/
+	public AnagramFamily(List<Word> theFamily)
+	{
+		myCount = 0;
+		myWords = new LinkedList<Word>;
+
+		(create iterator for theFamily)
+		(traverse theFamily, adding 
+		 its contents to myWords and 
+		 incrementing count)
+
+		(sort myWords through a comparator)
+		(alphabetically by original word)
+	}
+	
+}
+
+/************************ MAIN DRIVER *******************************/
+
+public class 
+{
+	
+	public static void main(String theArgs[])
+	{
+		(open input file)
+		
+		(use iterator over input to create
+		 word objects and add these objects 
+	 	 to LinkedList )
+
+		(sort the list alphabetically 
+		 by canotical form (Word class'
+		 compareTo method)
+		
+		(create a new LinkedList<AnagramFamily> families)
+		(creat a new LinkedList<Word> aFamily)
+		
+		(uses recursive calls to getFamily to get families)	
+		 while(the iterator.hasNext())
+		 {
+			Word test = iterator.Next();
+			aFamily.add(Test);
+			if( iterator.hasNext())
+			{
+				getFamily(aFamily, iterator, test);
+			}
+			families.add(new AnagramFamily(aFamily));
+			aFamily.clear();
+		}
+			
+		
+		
+	}
+	
+	public static void getFamily(theFamily, theIterator, thePrevious)
+	{
+}		Word test = theIterator.next();
+		if (thePrevious.compareTo(test) == 0)
+		{
+			theFamily.add(test);
+			if(theIterator.hasNext();
+			getFamily(theFamily, theIterator, test)
+		}
+		else
+		{
+			theIterator.previous();
+		}
+	}
 
 
 Original Assignment
