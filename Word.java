@@ -1,30 +1,63 @@
-
+/** *************************************
+    * Word.java                       
+    *                                  
+    * TCSS 143 winter 2015               
+    * Assignment #9                    
+    **************************************/
+    
 import java.util.*;
+
+/** **************************************
+    * Word is object class which defines
+    * a word by its original form and 
+    * its canotical form. words are inherintly
+    * ordered by their canotical form
+    * ascending alphabetically 
+    *                   
+    * @author Tarik Merzouk               
+    * @version 3/10/15                    
+    ***************************************/
 
 public class Word implements Comparable<Word>
 {
-	
+	//Original word field 
 	private String myWord;
+   
+   //feild for myWord's canotical form
 	private String myCat;
 	
 	/**
 	* this constructor assigns myWord
-	* and calls       to create myCan
+	* and calls makeCat to create myCat
+   *
+   * @param theWord (original word)
+   *
 	**/
+   
 	public Word(String theWord)
 	{
 		myWord = theWord;
+      
+      //charlist of word for sorting
       char[] wordChars = theWord.toCharArray();
+      
 		makeCat(wordChars);
+      
+      //assign myCat to new sorted char string
       myCat = new String(wordChars);
       
 	}
 
 	/**
 	* this method will find the canotical 
-	* form of the passed. Efficency will be
-	* crucial as the database being processed 
-	* is fairly large.
+	* form of the passed arraylist of 
+   * char. It operates using the mergesort
+   * algorithm by recursively splitting the
+   * array in half then sorting those halfs
+   * into a resulting array.
+   *
+   * @param chars (char list of word characters)
+   *
 	**/
 	
 	private final void makeCat(char[] chars)
@@ -49,7 +82,13 @@ public class Word implements Comparable<Word>
 		
    /**
    * this method handles merging the two halves 
-   * of the char array into  sorted order
+   * of the char array  from makeCat
+   * into  sorted order.
+   *
+   * @param result (final char array)
+   * @param theLeft (first half of array)
+   * @param theRight (second half of array)
+   *
    **/
    
 	private final void merge(char[] result, 
@@ -74,17 +113,13 @@ public class Word implements Comparable<Word>
          }
       }
    }
-		
-	
-	/**
-	* this method returns positive int
-	* value if myCat > theOther, 0 if 
-	* myCat is == theOther, and negative
-	* int if myCat < theOther.
-	**/
    
-   /** this accessor method retrieves
-	  * myWord
+   /** 
+   * this accessor method retrieves
+	* myWord.
+   *
+   * @return myWord (word objects word feild)
+   *
 	**/
    
 	public String getMyWord()
@@ -93,7 +128,10 @@ public class Word implements Comparable<Word>
 	}
 
 	/** 
-	* retrieves canatical form
+	* getMyCat retrieves canatical form.
+   *
+   * @return myCat (canotical form feild)
+   *
 	**/
    
 	public String getMyCat()
@@ -106,12 +144,25 @@ public class Word implements Comparable<Word>
    * this objects canotical form
    * to the others canotical form
    * ascending alphabetically
+   *
+   *  @param theOther (word to compare to
+   *  @return myCat.compareTo(theOther.getMyCat())
+   *
    **/
    
 	public int compareTo (Word theOther)
 	{
 		return myCat.compareTo(theOther.getMyCat());
 	}
+   
+   /**
+   * toString simply returns
+   * the word objects original
+   * word feild.
+   *
+   * @return myWord (the word feild)
+   *
+   **/
    
    public String toString()
    {

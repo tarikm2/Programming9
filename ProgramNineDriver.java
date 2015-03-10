@@ -1,8 +1,34 @@
+/** *************************************
+    * ProgramNineDriver.java                       
+    *                                  
+    * TCSS 143 winter 2015               
+    * Assignment #9                    
+    **************************************/
+
 import java.util.*;
 import java.io.*;
 
+/** **************************************
+    * ProgramNineDriver acts as the main driver 
+    * for organiing and sorting word objects
+    * into AnagramFamilies and outputing 
+    * the resulting output.
+    *                   
+    * @author Tarik Merzouk               
+    * @version 3/10/15                    
+    ***************************************/
+
 public class ProgramNineDriver
 {
+
+   /**
+   * main is the driver program to test
+   * word and AnagramFamily objects 
+   * from words.txt.
+   *
+   * @param theArgs[] (command line input)
+   *
+   **/
 	
 	public static void main(String theArgs[])
 	{
@@ -76,6 +102,8 @@ public class ProgramNineDriver
          //based on family size descending 
    		Collections.sort(families, new CompareAnagramSize());	
          
+         
+         //the rest of main handles program output
          output.println("5 LARGEST FAMILIES");
          for (int i = 0; i < 5; i++)
          {
@@ -91,38 +119,54 @@ public class ProgramNineDriver
                output.println(f);
             }
          }
+         
+         input.close();
+         output.close();
 	   }
    }
 	
+   /**
+   * getFamily is a recursive method which 
+   * continues down a list of Word objects 
+   * untill the next word object is not
+   * the same as the current object
+   * based on its canotical form
+   * and adds all similar objects 
+   * to a result LinkedList.
+   *
+   * @param theFamily (list of similar words)
+   * @param theIterator (word list iterator)
+   * @param thePrevious (last word in the list)
+   *
+   **/
    
-   
-public static void getFamily
-   (LinkedList<Word> theFamily,
+   public static void getFamily
+  (LinkedList<Word> theFamily,
    ListIterator<Word> theIterator,
    Word thePrevious)
-	{
-      //sets the test to the next word
-		Word test = theIterator.next();
-      
-      //if test == previous, recall method with
-      // test passed to thePrevious
-		if (thePrevious.compareTo(test) == 0)
-		{
-			theFamily.add(test);
+   	{
+         //sets the test to the next word
+   		Word test = theIterator.next();
          
-			if(theIterator.hasNext())
-         {
-			   getFamily(theFamily, theIterator, test);
-         }
-		}
-      
-      //BASE CASE: if the next item != previous
-		else
-		{
-         //step back in iterator so next item
-         //is the first new canotical form
-			theIterator.previous();
-		}
+         //if test == previous, recall method with
+         // test passed to thePrevious
+   		if (thePrevious.compareTo(test) == 0)
+   		{
+   			theFamily.add(test);
+            
+   			if(theIterator.hasNext())
+            {
+   			   getFamily(theFamily, theIterator, test);
+            }
+   		}
+         
+         //BASE CASE: if the next item != previous
+   		else
+   		{
+            //step back in iterator so next item
+            //is the first new canotical form
+   			theIterator.previous();
+   		}
 	}
 }
    
