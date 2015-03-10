@@ -75,6 +75,22 @@ public class ProgramNineDriver
          //sorts our AnagramFamilys
          //based on family size descending 
    		Collections.sort(families, new CompareAnagramSize());	
+         
+         output.println("5 LARGEST FAMILIES");
+         for (int i = 0; i < 5; i++)
+         {
+            output.println(families.get(i));
+         }
+         output.println();
+         
+         output.println("FAMILIES OF LENGTH 8");
+         for (AnagramFamily f: families)
+         {
+            if (f.getMyCount() == 8)
+            {
+               output.println(f);
+            }
+         }
 	   }
    }
 	
