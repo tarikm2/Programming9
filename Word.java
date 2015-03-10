@@ -16,6 +16,8 @@ public class Word implements Comparable<Word>
 		myWord = theWord;
       char[] wordChars = theWord.toCharArray();
 		makeCat(wordChars);
+      myCat = new String(wordChars);
+      
 	}
 
 	/**
