@@ -121,9 +121,9 @@ public class AnagramFamily
 
 /********************************AnagramFamily comparator *************/
 
-public class CompareAnagramSize implements Comparator<Word>
+public class CompareAnagramSize implements Comparator<AnagramFamily>
 {
-	public int compare(AnagramFamily theThis AnagramFamily theOther)
+	public int compare(AnagramFamily theThis, AnagramFamily theOther)
 	{
 		return theOther.getMyCount() 
 		- theThis.getMyCount();
@@ -132,7 +132,7 @@ public class CompareAnagramSize implements Comparator<Word>
 
 /************************ MAIN DRIVER *******************************/
 
-public class 
+public class ProgramNineDriver
 {
 	
 	public static void main(String theArgs[])
@@ -171,7 +171,7 @@ public class
 	
 	public static void getFamily(theFamily, theIterator, thePrevious)
 	{
-}		Word test = theIterator.next();
+		Word test = theIterator.next();
 		if (thePrevious.compareTo(test) == 0)
 		{
 			theFamily.add(test);
@@ -183,6 +183,8 @@ public class
 			theIterator.previous();
 		}
 	}
+}
+.n(
 
 
 Original Assignment
