@@ -71,12 +71,12 @@ public class Word implements Comparable<Word>
 
 /********** WORD OBJECT COMPARATOR CopareByOriginal*************/
 
-public class IgnoreCaseCompare implements Comparator<Word>
-{.
+public class CompareByOriginal implements Comparator<Word>
+{
    public int compare(Word theFirst, Word theSecond)
    {	
-	return theFirst.getMyWord()
-	.compareTo(theSecond.getMyWord());
+	return theSecond.getMyWord()
+	.compareTo(theFirst.getMyWord());
    }
 }
 
@@ -107,6 +107,27 @@ public class AnagramFamily
 		(alphabetically by original word)
 	}
 	
+	public void getMyCount()
+	{
+		return myCount;
+	}
+	/**
+	* compareTo compares AnagramFamilies
+	* based on their size
+	**/
+		
+	
+}
+
+/********************************AnagramFamily comparator *************/
+
+public class CompareAnagramSize implements Comparator<Word>
+{
+	public int compare(AnagramFamily theThis AnagramFamily theOther)
+	{
+		return theOther.getMyCount() 
+		- theThis.getMyCount();
+	}
 }
 
 /************************ MAIN DRIVER *******************************/
@@ -138,10 +159,12 @@ public class
 			{
 				getFamily(aFamily, iterator, test);
 			}
+			Collections.sort(aFamily, new CompareByOriginal());
 			families.add(new AnagramFamily(aFamily));
 			aFamily.clear();
 		}
-			
+		Collections.sort(families, new CompareAnagramSize());
+		
 		
 		
 	}
