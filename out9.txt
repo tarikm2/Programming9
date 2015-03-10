@@ -1,16 +1,16 @@
 5 LARGEST FAMILIES
-AnagramFamily@55f96302
-AnagramFamily@3d4eac69
-AnagramFamily@42a57993
-AnagramFamily@75b84c92
-AnagramFamily@6bc7c054
+[spear, spare, reaps, rapes, presa, prase, pears, parse, pares, asper, apres, apers]
+[talers, stelar, staler, slater, salter, ratels, laster, estral, artels, alters, alerts]
+[tesla, teals, tales, taels, stela, steal, stale, slate, setal, least]
+[spacer, secpar, scrape, recaps, parsec, pacers, escarp, crapes, capers]
+[stearin, stainer, retsina, retinas, retains, ratines, nastier, antsier, anestri]
 
 FAMILIES OF LENGTH 8
-AnagramFamily@232204a1
-AnagramFamily@4aa298b7
-AnagramFamily@7d4991ad
-AnagramFamily@28d93b30
-AnagramFamily@1b6d3586
-AnagramFamily@4554617c
-AnagramFamily@74a14482
-AnagramFamily@1540e19d
+[traces, recast, reacts, crates, caters, caster, cartes, carets]
+[seringa, searing, reginas, regains, reagins, gainers, erasing, earings]
+[spale, sepal, salep, pleas, peals, pales, leaps, lapse]
+[seral, reals, rales, lears, laser, lares, earls, arles]
+[spears, sparse, spares, repass, prases, passer, parses, aspers]
+[teas, seta, seat, sate, etas, eats, east, ates]
+[treens, ternes, tenser, resent, rentes, renest, nester, enters]
+[spire, spier, speir, ripes, prise, pries, piers, peris]

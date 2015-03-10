@@ -36,4 +36,9 @@ public class AnagramFamily
 	{
 		return myCount;
 	}	
+   
+   public String toString()
+   {
+      return myWords.toString();
+   }
 }

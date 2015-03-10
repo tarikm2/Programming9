@@ -112,4 +112,9 @@ public class Word implements Comparable<Word>
 	{
 		return myCat.compareTo(theOther.getMyCat());
 	}
+   
+   public String toString()
+   {
+      return myWord;
+   }
 }
