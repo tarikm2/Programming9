@@ -1,3 +1,22 @@
+README.TXT CONTENTS:
+OVERVIEW
+SUDO CODE
+ORIGINAL ASSIGNMENT
+
+Overview
+------------------------------------------------------------------------------------------------------------------
+AUTHOR: Tarik Merzouk
+PURPOSE: Programming assignment for JAVA 143 @ UW
+DATE: 3/10/15
+
+This project reads an input text file of words and instantiates a word object for each word with its original 
+and canonical form(cat -> act, tac -> act). These word objects are then organized into AnagramFamily objects, which contain a list of all word objects that have similar canotcial form. The main driver then ouputs all AnagramFamilies with 8 items as well as the 5 largest AnagramFamilies to out.txt. 
+In adition to organizing the input text file into Word and AnagramFamily objects, this project also functions to sort Word
+and AnagramFamily objects into several usefull orders, including comparing AnagramFamilys by size through a comparator class, Word objects by anagram through the class compareTo method, and words by their origial form through a comparator class.
+Since this project involves handling and processing large LinkedLists of data efficency of implementaiton was crucial in order to mainain fast runtime. In order to accomplish this, I made carefull use of Iterators and implemented a recursive merge sort algorithm when instantiating the cananical forms of Word objects. Besides these processes, the algoritm in the projects main driver forms one of the most demanding prodesses of the project. In order to efficiently handle the demand of this algorithm I implemented a recursive method to sort the Word objects from input into lists of anagram families and then instantiated AnagramFamilies by passing this list to the AnagramFamily constructor. This process allows the program to divide up all of it's word objects into AnagramFamily objects with only one full pass over the original LinkedList of words and only one call to the AnagramFamily constructor per AnagramFamily. 
+
+
+
 Sudo code
 -----------------------------------------------------------------------------------------------------------------
 
